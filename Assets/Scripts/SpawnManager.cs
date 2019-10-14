@@ -5,12 +5,13 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     [SerializeField] GameObject[] animalPrefabs;
-    [SerializeField] float xSpawnRange = 20;
-    [SerializeField] float zSpawnPosition = 20;
+    [SerializeField] float xSpawnRange = -6;
+    [SerializeField] float xSpawnRangeF = 60;
+    [SerializeField] float zSpawnPosition = 15;
 
     void Start()
     {
-        InvokeRepeating("SpawnAnimal", 1.5f, 2f);
+        InvokeRepeating("SpawnAnimal", 1f, 1.5f);
     }
 
     void Update()
@@ -22,7 +23,7 @@ public class SpawnManager : MonoBehaviour
     {
         int animalIndex = Random.Range(0, animalPrefabs.Length);
         GameObject animalPrefab = animalPrefabs[animalIndex];
-        Vector3 pos = new Vector3(Random.Range(-xSpawnRange, xSpawnRange), 0, zSpawnPosition);
+        Vector3 pos = new Vector3(Random.Range(xSpawnRange, xSpawnRangeF), 0, zSpawnPosition);
         Instantiate(animalPrefab, pos, animalPrefab.transform.rotation);
     }
 }
