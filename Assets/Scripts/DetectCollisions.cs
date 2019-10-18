@@ -13,19 +13,23 @@ public class DetectCollisions : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
         moveForward = GetComponent<MoveForward>();
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject, 2f);
+        
+          Destroy(gameObject, 2f);
 
-        Vector3 direction = Quaternion.Euler(-20, 0, 0) * -transform.forward;
-        rb.AddForce(direction * 20f, ForceMode.Impulse);
-        rb.AddTorque(Random.insideUnitSphere * 15f, ForceMode.Impulse);
+          Vector3 direction = Quaternion.Euler(-20, 0, 0) * -transform.forward;
+          rb.AddForce(direction * 20f, ForceMode.Impulse);
+          rb.AddTorque(Random.insideUnitSphere * 15f, ForceMode.Impulse);
 
-        moveForward.enabled = false;
-        boxCollider.enabled = false;
+          moveForward.enabled = false;
+          boxCollider.enabled = false;
 
-        Destroy(other.gameObject);
+          Destroy(other.gameObject);
+        
+        
     }
 }

@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] float xRange = 24;
     [SerializeField] float speed  = 10;
-    [SerializeField] GameObject projectilePrefab;
+    //[SerializeField] GameObject projectilePrefab;
 
     void FixedUpdate()
     {
@@ -24,9 +24,9 @@ public class PlayerController : MonoBehaviour
         
         transform.Translate(-verticalInput * speed * Time.deltaTime, 0, 0);
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+        //}
     }
 }
