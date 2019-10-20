@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 4685484822108767135}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -334,8 +334,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xRange: 19
   speed: 10
-  projectilePrefab: {fileID: 2757950860426988177, guid: 55a69250dfafedb43b22ce635d55dc35,
-    type: 3}
 --- !u!65 &4685484822108767135
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -1010,7 +1010,7 @@ GameObject:
   - component: {fileID: -3031290523331010099}
   m_Layer: 0
   m_Name: Animal_Rooster_Brown
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

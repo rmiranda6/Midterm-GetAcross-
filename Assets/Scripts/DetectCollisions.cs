@@ -16,20 +16,21 @@ public class DetectCollisions : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider collision)
     {
-        
-          Destroy(gameObject, 2f);
+        if (collision.gameObject.CompareTag("Player"))
+            {
+            Destroy(gameObject, 2f);
 
-          Vector3 direction = Quaternion.Euler(-20, 0, 0) * -transform.forward;
-          rb.AddForce(direction * 20f, ForceMode.Impulse);
-          rb.AddTorque(Random.insideUnitSphere * 15f, ForceMode.Impulse);
+            Vector3 direction = Quaternion.Euler(-20, 0, 0) * -transform.forward;
+            rb.AddForce(direction * 20f, ForceMode.Impulse);
+            rb.AddTorque(Random.insideUnitSphere * 15f, ForceMode.Impulse);
 
-          moveForward.enabled = false;
-          boxCollider.enabled = false;
+            moveForward.enabled = false;
+            boxCollider.enabled = false;
 
-          Destroy(other.gameObject);
-        
+            // Destroy(other.gameObject);
+        }
         
     }
 }
