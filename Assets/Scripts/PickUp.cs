@@ -6,11 +6,12 @@ public class PickUp : MonoBehaviour
 {
     [SerializeField] Transform theDest;
     bool carrying = false;
-    [SerializeField] float range;
+    //[SerializeField] float range;
+    private Transform target;
     // Start is called before the first frame update
     void Start()
     {
-        
+        target = GameObject.FindGameObjectWithTag("Object").GetComponent<Transform>();
     }
 
     // Update is called once per frame
